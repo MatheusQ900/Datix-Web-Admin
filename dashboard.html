@@ -1,1 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="bt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datix Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+     <div class="sidebar">
+
+        <h2>DATIX</h2>
+
+        <ul>
+            <li>
+                <a href="dashboard.html" class="ativo">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="clientes.html">Clientes</a>
+            </li>
+
+            <li>
+                <a href="relatorios.html">Relatórios</a>
+            </li>
+
+            <li>
+                <a href="configuracoes.html">Configurações</a>
+            </li>
+
+            <li>
+                <a href="login.html">Sair</a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Painel Administrativo</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Clientes</h3>
+                <span id="clientes">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Online</h3>
+                <span id="online">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Offline</h3>
+                <span id="offline">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Último Acesso</h3>
+                <span id="ultimo">---</span>
+            </div>
+
+        </div>
+
+        <div class="tabela">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaClientes">
+
+                    <tr>
+                        <td>1</td>
+                        <td>Empresa Alpha</td>
+                        <td>🟢 Online</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Empresa Beta</td>
+                        <td>🔴 Offline</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Empresa Gama</td>
+                        <td>🟢 Online</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
+    
