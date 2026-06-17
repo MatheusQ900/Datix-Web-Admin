@@ -1,10 +1,44 @@
-document.getElementById("clientes").innerText = "150";
-document.getElementById("online").innerText = "42";
-document.getElementById("offline").innerText = "108";
-document.getElementById("ultimo").innerText = "PC-001";
+if(localStorage.getItem("logado") !== "true"){
+    window.location.href = "login.html";
+}
 
-document.getElementById("logout").addEventListener("click", () => {
+async function carregarDashboard(){
 
-    alert("Logout realizado!");
+    try{
+
+        const resposta = await fetch(
+            "http://192.168.0.246/datix.api/dashboard.php"
+        );
+
+        const dados = await resposta.json();
+
+        document.getElementById("clientes").innerText =
+            dados.totalClientes;
+
+        document.getElementById("online").innerText =
+            "-";
+
+        document.getElementById("offline").innerText =
+            "-";
+
+        document.getElementById("ultimo").innerText =
+            dados.ultimoCliente;
+
+    }catch(erro){
+
+        console.log(erro);
+
+    }
+
+}
+
+carregarDashboard();
+
+document.getElementById("logout")
+.addEventListener("click", () => {
+
+    localStorage.removeItem("logado");
+
+    window.location.href = "login.html";
 
 });

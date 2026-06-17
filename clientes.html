@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes - Datix</title>
+
+    <link rel="stylesheet" href="css/clientes.css">
+</head>
+<body>
+
+    <div class="sidebar">
+
+        <h2>DATIX</h2>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="clientes.html" class="ativo">Clientes</a></li>
+            <li><a href="#">Relatórios</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="login.html" id="logout">Sair</a></li>
+        </ul>
+
+    </div>
+
+    <div class="content">
+
+        <h1>Clientes</h1>
+
+        <div class="topo">
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar por nome, CPF ou e-mail..."
+                onkeyup="filtrarClientes()">
+
+            <button onclick="carregarClientes()">
+                Atualizar
+            </button>
+
+        </div>
+
+        <p id="totalClientes">Total: 0</p>
+
+        <div class="tabela">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaClientes">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="js/clientes.js"></script>
+
+</body>
+</html>
